@@ -2,9 +2,8 @@
 
 set -e
 
-
-BASE_IMAGE="docker.atl-paas.net/ggatus/parent:latest"
-CHILD_IMAGE="docker.atl-paas.net/ggatus/child:latest"
+BASE_IMAGE="<FIXME>/parent:latest"
+CHILD_IMAGE="<FIXME>/child:latest"
 
 # clean up
 ./cleanup.sh
