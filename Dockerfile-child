@@ -2,16 +2,12 @@
 ARG base
 FROM $base
 
-RUN echo "hello2" > hello-child3.txt
+RUN echo "hello1" > child-1.txt
+RUN echo "hello2" > child-2.txt
+RUN echo "hello3" > child-3.txt
+RUN echo "hello4" > child-4.txt
 
-RUN echo "hello2" > hello-child0.txt
-
-RUN echo "hello1" > hello-child1.txt
-
-RUN echo "hello2" > hello-child2.txt
-
-RUN --mount=type=secret,id=ssh_key,dst=secret1.txt \
-    echo "foo" > child-bar.txt
+RUN --mount=type=secret,id=ssh_key,dst=secret1.txt echo "foo" > child-secret.txt
 
 RUN echo "hello2" > hello-child4.txt
 
