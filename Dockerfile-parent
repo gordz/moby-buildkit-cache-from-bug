@@ -1,0 +1,6 @@
+# syntax = docker/dockerfile:1.0-experimental
+FROM alpine:latest
+
+RUN echo "hello world" > base.txt
+
+COPY entrypoint.sh entrypoint.sh

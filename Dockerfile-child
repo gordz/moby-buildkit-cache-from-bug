@@ -1,0 +1,20 @@
+# syntax = docker/dockerfile:1.0-experimental
+ARG base
+FROM $base
+
+RUN echo "hello2" > hello-child3.txt
+
+RUN echo "hello2" > hello-child0.txt
+
+RUN echo "hello1" > hello-child1.txt
+
+RUN echo "hello2" > hello-child2.txt
+
+RUN --mount=type=secret,id=ssh_key,dst=secret1.txt \
+    echo "foo" > child-bar.txt
+
+RUN echo "hello2" > hello-child4.txt
+
+COPY entrypoint.sh entrypoint.sh
+
+
